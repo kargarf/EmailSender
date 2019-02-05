@@ -19,14 +19,14 @@ namespace EmailSender
                 SmtpClient client = new SmtpClient("smtp.gmail.com",587);
                 MailMessage message = new MailMessage(); 
 
-                message.From = new MailAddress("dijitalkanal01@gmail.com"); // Sending Email
+                message.From = new MailAddress("youremail@gmail.com"); // Sending Email
                 message.To.Add(txtreciever.Text); // To emailid
                 message.Subject = txtsubject.Text; // Subject
                 message.Body = txtbody.Text; // Body
                 
                 client.UseDefaultCredentials = false; 
                 client.EnableSsl = true; // Enabling secured Connection
-                client.Credentials = new System.Net.NetworkCredential("dijitalkanal01@gmail.com", "Adk2018*"); // Credential of gmail
+                client.Credentials = new System.Net.NetworkCredential("youremail@gmail.com", "yourPassword"); // Credential of gmail
 
                 Cursor.Current = Cursors.WaitCursor;
                 client.Send(message); //Sending...
